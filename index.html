@@ -8,33 +8,11 @@
 </head>
 <body>
   <div class="player">
-    <img id="cover" src="logo.png" alt="Carátula" class="cover">
-    <h2 id="title">Canción del día</h2>
-    <p id="artist">Artista</p>
-
-    <!-- Botón admin -->
-    <button id="adminBtn">Admin</button>
-
-    <!-- Formulario oculto -->
-    <div id="adminForm" style="display:none;">
-      <input type="password" id="password" placeholder="Contraseña">
-      <input type="text" id="titleInput" placeholder="Título de la canción">
-      <input type="text" id="artistInput" placeholder="Artista">
-      <input type="file" id="coverInput" accept="image/*">
-      <button onclick="saveSong()">Guardar</button>
-    </div>
+    <img id="cover" src="default-cover.png" alt="Carátula" class="cover">
+    <h2 id="title">Cargando...</h2>
+    <p id="artist">Por favor, espera</p>
   </div>
 
   <script src="script.js"></script>
-  <script>
-    // Mostrar canción guardada
-    const song = JSON.parse(localStorage.getItem("songOfDay"));
-    if (song) {
-      document.getElementById("title").textContent = song.title;
-      document.getElementById("artist").textContent = song.artist;
-      if (song.cover) document.getElementById("cover").src = song.cover;
-    }
-  </script>
 </body>
 </html>
-
